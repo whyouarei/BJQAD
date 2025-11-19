@@ -1,0 +1,17 @@
+Keywords e tipos primitivos.
+lista de keywords (pesquise)
+true, false e null nao sao keywords mas nao podem tbm
+
+java nao é totalmente orientada a objetos por conta dos tipos primitivos 
+explique brevemente ambos tipos, diferença de deles, etc
+
+ao utilizar long, valor L no final var number 1L;
+float, valor f no final ex: var number = 1.0f;
+(explique o porque e uso pratico)
+EXPLIQUE TAMBEM TODOS OS DEMAIS CASOS DE TIPOS PRIMITIVOS QUE POSSUEM LETRAS AO FINAL E TODAS AS DIFERENÇAS ENTRE ELES IGUAL EX:
+char = aspas simples
+string = aspas duplas
+
+
+
+

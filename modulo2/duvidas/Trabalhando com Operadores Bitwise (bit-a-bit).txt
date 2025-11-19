@@ -1,0 +1,96 @@
+Trabalhando com Operadores Bitwise (bit-a-bit)
+
+faz operações bit a bit nos valores (explicaR)
+
+geralmente usado com os tipos: long int shor char e byte
+
+"Or" bitewise:
+
+  var v1 = 6;
+        var b1 = Integer.toBinaryString(v1);
+        System.out.printf("Primeiro número da operação %s (representação binária %s)\n", v1, b1);
+        var v2 = 5;
+        var b2 = Integer.toBinaryString(v2);
+        System.out.printf("Segundo número da operação %s (representação binária %s)\n", v2, b2);
+        var result = v1 | v2;
+        var bires = Integer.toBinaryString(result);
+        System.out.printf(" %s | %s = %s (representação binária %s)\n", v1, v2, v1 | v2, bires);
+   
+
+no caso, ele pegou o valor b1 110, b2 101 e fez o "or |" passando bit por bit, considerando 1 como true e 0 como false resultando em 111
+
+
+
+
+"And" bitewise:
+var result = v1 & v2;
+        var bires = Integer.toBinaryString(result);
+        System.out.printf(" %s & %s = %s (representação binária %s)\n", v1, v2, result , bires);
+
+mesma coisa com função & 
+exemplo de cima:
+110
+101
+100
+
+
+"short" bitewise:
+se os bits forem iguais retorna 0 se forem diferentes retorna 1
+
+exemplo:
+110
+101
+011
+
+
+
+complement bitwise:
+so precisa de um elemento
+
+nega todas as condições binarias
+exemplo:
+00000000000000000000000000000110
+11111111111111111111111111111001
+
+
+
+
+shift operator left bitwise:
+desloca os opreadores a esquerda e acrescenta 0 nos slots faltantes
+1001
+10
+100100
+
+(preciso de ajuda para entender o porque 110 e 101 resultou 11000000
+
+teoricamente se ele desloca a qtde de bites, era pra ser
+110 101 000, resultando 110101000. mas o resultado no vscode sai 
+110 000 000
+e eu particularmente nao entendi por que)
+
+
+shift operator right bitwise:
+
+quase igual ao left mas com uma particularidade
+desloca da direita para esquerda e os slots faltantes a esquerda viram 0
+
+110
+101
+0
+
+deslocou os 3 pra esquerda e nao sobrou nd
+
+varia de acordo com negativo ou positivo. ex:
+11111111111111111111111111111010
+101
+11111111111111111111111111111111
+(como era numero negativo, ele empurrou 3 para direita mas viu q o numero q tinha era 1 entao ele nao acrescentou 0 no lugar) ← essa eh a diferença entre o right e o left
+
+
+
+
+unsigned right shift operator bitwise:
+faz igual o right shift mas ignora se eh positivo ou nevativo, completa com 0
+
+
+

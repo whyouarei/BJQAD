@@ -1,0 +1,63 @@
+Trabalhando com Operadores Aritiméticos
+
++ ← somatoria
+System.out.printf("%s + %s = %s\n", value1, value2, value1 + value2); ← 2+2=4 
+
+
+funciona diferente com strings pois nao soma considerando nao valor inteiro
+System.out.println(value1 + " + " + value2 + " = " + value1 + value2); ← 2+2=22
+vai concatenando tudo da esquerda para direita
+
+
+System.out.println(value1 + " + " + value2 + " = " + (value1 + value2)); ← dessa maneira resolveria os valores inteiros mencionados primeiro
+
+--------------------------------------------------------------------------------------------------------------------
+
+- ← subtração
+funciona igual ao somatoria.
+não funciona com tipo string!!!
+situação que necessita de explicação breve: value1: -9; value2:-22; printf: -9 - -22 = 13. converteu o - -22 para + 22. 
+
+--------------------------------------------------------------------------------------------------------------------
+
+/ ← divisão
+numeros quebrados necessario usar float
+
+
+System.out.printf("%s %% %s = %s\n", value1, value2, value1 % value2); ← indicaria o quanto que sobraria da divisão. ex 55/2 com valores inteiros sobraria 1.
+
+--------------------------------------------------------------------------------------------------------------------
+
+* ← multiplicação
+
+funciona normalmente como multiplicador
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+
++= ← acrescenta o valor declarado
+
+var value = 5;
+value += 12;
+saida: 17
+
+
+(funciona com qualquer sinal aritimetico)
+--------------------------------------------------------------------------------------------------------------------
+
+++ ← operador de incremento
+-- ← operador de decremento
+
+
+colocando antes do numero ja altera o valor na mesma linha
+colocando depois do numero na proxima linha de execução que é atribuido
+
+--------------------------------------------------------------------------------------------------------------------
+
+classe:
+
+Math.sqrt(value1); ← raiz quadrada
+Math.pow(value1, 2)); ← potencia (no caso, ao quadrado, numero no fim determina qual potencia)
+
+

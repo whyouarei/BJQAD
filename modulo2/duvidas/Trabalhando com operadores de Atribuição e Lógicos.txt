@@ -1,0 +1,15 @@
+Trabalhando com operadores de Atribuição e Lógicos:
+
+= ← atribuição
+== ← igual
+!= ← diferente
+> ← maior que
+>= ← maior ou igual
+< ← menor que
+< ← menor ou igual
+|| ← ou (ele precisa de pelo menos 1 true para dar sequencia) com 2 || ao ver a primeira booleana como true, ja ignora a segunda. o OU | verifica as duas ainda assim.
+(porque existe o | me explique)
+&& ← E (so retorna verdadeiro se ambas condições forem verdadeiras.
+
+
+
