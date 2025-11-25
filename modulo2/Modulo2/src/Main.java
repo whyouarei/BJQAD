@@ -78,7 +78,7 @@ public class Main {
         var altura = scanner.nextInt();
         System.out.printf("Um retângulo de base %scm e altura %scm possuí uma área de %scm²\n", base, altura, base * altura);
 
-     */
+    
         //Exercício 4 OK
         var scanner = new Scanner(System.in);
         System.out.println("Qual o nome da primeira pessoa?");
@@ -91,7 +91,8 @@ public class Main {
         var p2i = scanner.nextInt();
         var diferenca = (int) Math.sqrt(Math.pow(p1i - p2i, 2));
         System.out.printf("%s e %s possuem %s anos de diferença\n", p1n, p2n, diferenca);
-       
+      */
+        
     }
 
    

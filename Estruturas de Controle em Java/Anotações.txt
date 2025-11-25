@@ -1,0 +1,308 @@
+Estrutura Condicional If, Else e Else If
+
+IF - configurar uma expressão com um valor booleano que será verificado pelo IF. A depender do valor, ele executa um determinado codigo ou ignora
+Else - Condicional contraria ao determinado no IF
+
+If tal coisa é verdadeira, segue a um caminho. Else, segue outro caminho.
+
+
+Elvis Operator verifica a expressao booleana. Deu True, ele usa a primeira msg antes dos dois pontos. False, usa a segunda mensagem.
+
+
+Diferença do IF para Elvis:
+
+If pode executar codigos dentro do IF (da condicional). Elvis eh uma linha fazendo atribuição.
+
+
+Codigo da aula:
+
+ /*
+        Aula 1: Estrutura Condicional If, else e else If: 
+        
+        System.out.println("Hello, World!");
+        var scanner = new Scanner(System.in);
+        System.out.println("Informe seu nome: ");
+        var name = scanner.next();
+        System.out.println("Informe sua idade: ");
+        var age = scanner.nextInt();
+        System.out.println("Você é emancipado? (s/n)");
+        var isEmancipated = scanner.next().equalsIgnoreCase("s");
+
+        if (age >=18) {
+            System.out.printf("%s tem %s anos, você pode dirigir \n", name, age);
+        } else if (age >=16 && isEmancipated ){
+            System.out.printf("%s, apesar de você ter %s anos, você é emancipado e pode dirigir. \n", name, age);
+        }else {
+            System.out.printf("%s, você não pode dirigir. \n", name);
+        }
+
+        Cenários diferentes possiveis
+        
+         Cenario 1:
+        var canDrive = (age >= 18) || (age >= 16 && is Emancipated);
+        var messagge = "";
+        if (canDrive){
+            message = name + ", você pode dirigir \n";
+        } else {
+            message = name + ", você não pode dirigir \n";
+        }
+        
+        System.out.println(message);
+
+        Ao invés da mensagem variar de acordo com as condicionais, a verificação está na variável canDrive e a mensagem na variavel message. Dai a condicional verifica se a variável canDrive eh verdadeira ou falsa para determinar qual mensagem enviar.
+
+
+         Cenario 2 (Elvis Operator):
+        var canDrive = (age >= 18) || (age >= 16 && is Emancipated);
+        var messagge = canDrive ? 
+            name + ", você pode dirigir \n" : 
+            name + ", você não pode dirigir \n";
+        }
+        
+        System.out.println(message);
+
+        */
+
+
+Feito.
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+Estrutura Condicional Switch case
+
+
+a depender do valor inserido ele seleciona um caso pré configurado. se não colocar "break;" ele seleciona todos abaixo a partir do digitado.
+eh possivel agrupar casos para uma unica mensagem
+
+trabalha com int e string, sendo necessario ajustar no case (a partir da versão 7)
+
+keyword orbigado a declarar o nosso retorno, a do switch case chama-se yield
+
+
+Codigo da Aula:
+
+        /*Aula 2: Estrutura Condicional switch Case
+
+        Caso 1:
+        var scanner = new Scanner(System.in);
+        System.out.println("Informe um número de 1 até 7");
+        var option = scanner.nextInt();
+        switch (option){
+            case 1:
+                System.out.println("Domingo");
+                break;
+            case 2:
+                System.out.println("Segunda-Feira");
+                break;
+            case 3:
+                System.out.println("Terça-Feira");
+                break;
+            case 4:
+                System.out.println("Quarta-Feira");
+                break;
+            case 5:
+                System.out.println("Quinta-Feira");
+                break;
+            case 6:
+                System.out.println("Sexta-feira");
+                break;
+            case 7:
+                System.out.println("Sábado");
+                break;
+            default:
+                System.out.println("Opção inválida.");
+                break;
+
+            Caso 2:    
+        var scanner = new Scanner(System.in);
+        System.out.println("Informe um número de 1 até 7");
+        var option = scanner.nextInt();
+        switch (option){
+            case 1,7 -> System.out.println("Final de Semana");
+            case 2 -> System.out.println("Segunda-Feira");
+            case 3 -> System.out.println("Terça-Feira");
+            case 4 -> System.out.println("Quarta-Feira");
+            case 5 -> System.out.println("Quinta-Feira");
+            case 6 -> System.out.println("Sexta-Feira");
+            default -> System.out.println("Opção Inválida.");
+        }
+            Caso 3:
+        var scanner = new Scanner(System.in);
+        System.out.println("Informe um número de 1 até 7");
+        var option = scanner.nextInt();
+        var message = switch (option){
+            case 1, 7 -> {
+                var day = option == 1 ? "Domingo" : "Sábado";
+                yield String.format("Hoje é %s, fim de semana.", day);
+            }
+            case 2 -> "Segunda-Feira";
+            case 3 -> "Terça-Feira";
+            case 4 -> "Quarta-Feira";
+            case 5 -> "Quinta-Feira";
+            case 6 -> "Sexta-Feira";
+            default -> "Opção Inválida.";
+        };
+        System.out.println(message);
+        */
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Estrutura de Repetição FOR
+
+uma estrutura de codigo que a gente cria para que ele seja repetido uma certa quantidade de vezes para que ele atinja uma determinada condição
+no caso do For ele possui 3 condicionais no parenteses
+
+Codigo da aula:
+
+Aula 3: Estrutura de Repetição FOR 
+        
+
+        Caso 1(Apresentação da estrutura sem determinar condicionais):
+        var scanner = new Scanner(System.in);
+        for(;;){
+            System.out.println("Digite um nome:");
+            var name = scanner.next();
+            
+            if (name.equalsIgnoreCase("exit")) break;
+
+            System.out.println(name);
+        }
+
+	Explicação: o FOR nao tem condicionais alguma portanto todo nome digitado ali sera impresso no output, exceto quando digitarmos exit, que servirá para a repetição parar.
+        
+        Caso 2 (1 a 99 com condicional de break e output):
+        var scanner = new Scanner(System.in);
+        for(var i = 1; i <= 100;i ++){
+            if (i == 12) {
+                System.out.println("Fim da execução");
+                break;
+            }
+            System.out.println(i);            
+        }
+
+        Caso 3 (Só pares):
+        var scanner = new Scanner(System.in);
+        for(var i = 0; i <= 100;i +=2){
+            System.out.println(i);  
+        }
+        
+        Caso 3 (Só pares):
+        var scanner = new Scanner(System.in);
+        for(var i = 200; i = 0;i +=2){
+            System.out.println(i);  
+        }
+        
+        Caso 4 (Regredindo [-=2 para regredir de 2 em 2])
+        var scanner = new Scanner(System.in);
+        for(var i = 200; i >= 0;i --){
+            System.out.println(i);  
+        }
+
+        Caso 5 (Imprimindo todos os numeros utilizando operador de módulo)
+        var scanner = new Scanner(System.in);
+        for(var i = 0; i <= 100;i ++){
+            if (i % 2 ==0){
+                continue;
+            }
+            System.out.println(i);
+        }
+        
+        Caso 6 (Trabalha com os elementos listado em args):
+        var scanner = new Scanner(System.in);
+        for(var i = 0; i < args.length;i ++){
+            System.out.println(args[i]);
+        }
+
+        Caso 7 (Trabalha com os elementos listado em args com indíces):
+        var scanner = new Scanner(System.in);
+        for(var i = 0; i < args.length;i ++){
+            System.out.println((i + 1) + " - " + args[i]);
+        }
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Estruturas de repetição while e do while 
+
+diferente do for que utiliza condicionais para se basear ao realizar a repetição, o while voce informa uma condição e ele continuará rodando o código enquanto ela for VERDADEIRA.
+
+
+
+Melhores cenarios para cada estrutura de repetição:
+
+For - >Fazer interações em listas a partir de índice 
+for (int i = 0; i < args.length; i++){} ← util para cenário ond precisa da impressão do índice no output
+for (var arg: args) {} ← Caso não haja necessidade da impressao, mais simples.
+
+
+While - Rodar um código, nao uma lista, para enquanto determinada condição for ou nao for atendida.
+Do While ← se for necessário que o código rode ao menos uma vez
+Codigo da aula:
+
+     Caso 1 (Printar os nomes informados até que o nome "exit" seja escrito.)
+    
+        var scanner = new Scanner(System.in);
+        var name = "";
+        while(!name.equals("exit")){
+            System.out.println("Informe um nome");
+            name = scanner.next();
+            System.out.println(name);
+        }
+        
+
+        Caso 2 (Utilizando booleana para continuar a repetição)
+    
+        var scanner = new Scanner(System.in);
+        var name = "";
+        while(true){
+            System.out.println("Informe um nome");
+            name = scanner.next();
+            System.out.println(name);
+
+            if (name.equalsIgnoreCase("exit")) break;
+        }
+
+        Caso 3 (Do/While)
+            Diferneça com o while: ele executa primeiro o código antes de verificar se a condição é atendida. Dá a garantia que o código
+            rodará ao menos uma vez.
+
+        var scanner = new Scanner(System.in);
+        var name = "";
+        do {
+            System.out.println("Informe um nome");
+            name = scanner.next();
+            System.out.println(name);
+
+            if (name.equalsIgnoreCase("exit")) break;
+        } while (true);  
+        
+        (Ele roda o codigo no do primeiro e no fim verifica se a condição IgnoreCase está adentedida)
+
+        Caso 3.1 
+
+        var scanner = new Scanner(System.in);
+        var name = "exit";
+        while (!name.equalsIgnoreCase("exit")) {
+            System.out.println("Informe um nome");
+            name = scanner.next();
+            System.out.println(name);
+        } 
+        
+        (Nessa circunstância o while nao vai nem rodar porque o nome já é exit.)
+
+        Caso 4 (While com interações em cima do ARGS):
+
+        var i = 0;
+        while (args.length > i) {
+            System.out.println(args[i]);
+            i++;
+        } 
+
+        Caso 4.1 (DO/WHILE com interações em cima do ARGS):
+
+        var i = 0;
+        do {
+            System.out.println(args[i]);
+            i++;
+        } while(args.length > i);
+
+Preciso de ajuda com o conceito de ARGS e como atribuir valores a lista pelo vscode
